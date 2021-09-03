@@ -4,18 +4,28 @@ public class MyMain {
 
     // Calculates the median of the three inputs
     public static int median(int a, int b, int c) {
-        return 0; // REPLACE WITH YOUR CODE
+        if (a > b){
+            if (a > c){
+                return c;
+            }
+            return a;
+        }
+        if (b > c){
+            return c;
+        }
+        return b;
+
     }
 
     // Returns the input with the larger absolute value
     public static int magnitude(int a, int b) {
-        return 0; // REPLACE WITH YOUR CODE
+        return Math.max(Math.abs(a), Math.abs(b)); // REPLACE WITH YOUR CODE
     }
 
     // Returns the "c" value from the Pythagorean theorem "a^2 + b^2 = c^2",
     // where "a" and "b" are the inputs to the method
     public static double pythagoras(int a, int b) {
-        return 0.0; // REPLACE WITH YOUR CODE
+        return Math.sqrt(((a * a) + (b * b))); // REPLACE WITH YOUR CODE
     }
 
     public static void main(String[] args) {
@@ -26,5 +36,28 @@ public class MyMain {
 
         Scanner scan = new Scanner(System.in);
         // YOUR CODE HERE
+        System.out.println("median, magnitude, or pythagoras");
+        String choice = scan.next();
+        if (choice == "median"){
+            System.out.println("Select a: ");
+            int a = Integer.parseInt(scan.next());
+            System.out.println("Select b: ");
+            int b = Integer.parseInt(scan.next());
+            System.out.println("Select c: ");
+            int c = Integer.parseInt(scan.next());
+            System.out.println(median(a, b, c));
+        }
+        else if (choice == "magnitude"){
+            int a = Integer.parseInt(scan.next());
+            System.out.println("Select b: ");
+            int b = Integer.parseInt(scan.next());
+            System.out.println(magnitude(a, b));
+        }
+        else if (choice == "pythagoras"){
+            int a = Integer.parseInt(scan.next());
+            System.out.println("Select b: ");
+            int b = Integer.parseInt(scan.next());
+            System.out.println(pythagoras(a, b));
+        }
     }
 }
