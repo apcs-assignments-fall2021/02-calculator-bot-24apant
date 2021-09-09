@@ -24,8 +24,11 @@ public class MyMain {
 
     }
     // Returns the input with the larger absolute value
-    public static int magnitude(int a, int b) {
-        if (Math.max(Math.abs(a), Math.abs(b)) == a){
+    public static int magnitude(int a, int b)
+    {
+        int c = Math.abs(a);
+        int d = Math.abs(b);
+        if (c > d){
             return a;
         }
         return b;
@@ -57,6 +60,7 @@ public class MyMain {
             System.out.println(median(a, b, c));
         }
         else if (Objects.equals(choice, "magnitude")){
+            System.out.println("Select a: ");
             int a = Integer.parseInt(scan.next());
             System.out.println("Select b: ");
             int b = Integer.parseInt(scan.next());
